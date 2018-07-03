@@ -60,7 +60,7 @@ public class JsonUtils {
 	public static String toJson(Object o, String exclude) {
 		final ObjectNode jsonNode = MAPPER.valueToTree(o);
 		jsonNode.remove(exclude);
-		return jsonNode.toString();
+		return toJson(jsonNode);
 	}
 
 	public static void writeJsonToOutputStream(Object o, OutputStream os) throws IOException {
